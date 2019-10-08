@@ -1,0 +1,138 @@
+{
+  "center": [
+    139.714776,
+    35.700768
+  ],
+  "layers": [
+    {
+      "id": "background",
+      "paint": {
+        "background-color": [
+          "rgb",
+          243,
+          245,
+          250
+        ]
+      },
+      "type": "background"
+    },
+    {
+      "id": "image",
+      "source": "i",
+      "type": "raster"
+    },
+    {
+      "id": "admin",
+      "paint": {
+        "fill-extrusion-color": [
+          "interpolate-hcl",
+          [
+            "linear"
+          ],
+          [
+            "*",
+            [
+              "get",
+              "jinko"
+            ],
+            1000000,
+            [
+              "/",
+              1,
+              [
+                "get",
+                "area"
+              ]
+            ]
+          ],
+          0,
+          [
+            "rgb",
+            33,
+            102,
+            172
+          ],
+          30,
+          [
+            "rgb",
+            103,
+            169,
+            207
+          ],
+          50,
+          [
+            "rgb",
+            209,
+            229,
+            240
+          ],
+          100,
+          [
+            "rgb",
+            253,
+            219,
+            199
+          ],
+          1000,
+          [
+            "rgb",
+            239,
+            138,
+            98
+          ],
+          5000,
+          [
+            "rgb",
+            178,
+            24,
+            43
+          ]
+        ],
+        "fill-extrusion-height": [
+          "*",
+          [
+            "get",
+            "jinko"
+          ],
+          100000,
+          [
+            "/",
+            1,
+            [
+              "get",
+              "area"
+            ]
+          ]
+        ],
+        "fill-extrusion-opacity": 0.8
+      },
+      "source": "v",
+      "source-layer": "admin",
+      "type": "fill-extrusion"
+    }
+  ],
+  "port": 3000,
+  "sources": {
+    "i": {
+      "attribution": "国土地理院",
+      "maxzoom": 18,
+      "minzoom": 0,
+      "tileSize": 256,
+      "tiles": [
+        "https://maps.gsi.go.jp/xyz/std/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "v": {
+      "attribution": "総務省統計局の平成27年国勢調査町丁・字等別境界データを加工して利用",
+      "maxzoom": 11,
+      "minzoom": 10,
+      "tiles": [
+        "https://un-vector-tile-toolkit.github.io/koji-static/zxy/{z}/{x}/{y}.pbf"
+      ],
+      "type": "vector"
+    }
+  },
+  "version": 8,
+  "zoom": 11
+}
